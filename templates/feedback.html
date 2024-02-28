@@ -1,0 +1,119 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-oj0hD0uqADffZLlfE9/ZqG2pDNdUmU8QpF5b5RmXtEIl/oEAStCIYpT5Uo7BYY" crossorigin="anonymous">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+{% block body %}
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="form-horizontal" action="{% url 'feedbackform' %}" method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    <h1>Feedback</h1>
+
+                    <div class="control-group">
+                        <!-- First Name -->
+                        <label class="control-label" for="first_name">First Name</label>
+                        <div class="controls">
+                            <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="control-group">
+                        <!-- Last Name -->
+                        <label class="control-label" for="last_name">Last Name</label>
+                        <div class="controls">
+                            <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="control-group">
+                        <!-- E-mail -->
+                        <label class="control-label" for="email">E-mail</label>
+                        <div class="controls">
+                            <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="control-group">
+                        <!-- Phone Number -->
+                        <label class="control-label" for="phonenumber">Phone number</label>
+                        <div class="controls">
+                            <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter a valid phonenumber"
+                                class="input-xlarge">
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div class="control-group">
+                        <!-- Feedback -->
+                        <label class="control-label" for="feedback">Feedback</label>
+                        <div class="controls">
+                            <textarea id="feedback" name="feedback" placeholder="Enter your feedback"
+                                class="input-xlarge"></textarea>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="control-group">
+                        <!-- Rating -->
+                        <label class="control-label" for="rating">Rating</label>
+                        <div class="controls">
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating" value="5"><label
+                                    for="star5">1</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label
+                                    for="star4">2</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label
+                                    for="star3">3</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label
+                                    for="star2">4</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label
+                                    for="star1">5</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="control-group">
+                        <!-- Button -->
+                        <div class="controls">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<br><br>
+<div>
+    <h6>Source (Register Form) Available in this link - https://bootsnipp.com/snippets/k7A</h6>
+</div>
+{% endblock %}
+
+</html>
